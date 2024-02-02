@@ -1,0 +1,95 @@
+/* client/src/NavBar.css */
+.top-bar {
+    height: 60px;
+    background-color: #92A8D1;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    margin-left: 60px;
+    z-index: 1; /* Set z-index higher than the sidebar */
+    transition: margin-left 0.5s;
+}
+
+.top-bar.pushed {
+    margin-left: 250px;
+    z-index: 1; /* Ensure the top bar is covered by the sidebar when pushed */
+}
+
+.sidebar {
+    position: fixed;
+    width: 60px; /* Set a fixed width for the closed state */
+    transition: width 0.5s;
+    height: 100%;
+    padding-top: 60px;
+    background-color: #333;
+    overflow-x: hidden;
+    z-index: 2; /* Set a higher z-index for the sidebar to cover the top bar */
+}
+
+.sidebar.open {
+    width: 250px; /* Set a wider width for the open state */
+    padding-top: 60px;
+    z-index: 1; /* Ensure the sidebar is above the top bar when open */
+}
+
+.sidebar-toggle {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute; /* Set position to absolute */
+    top: 10px;
+}
+
+/* Add the following styles for mobile sidebar toggle */
+.sidebar-toggle-mobile {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .top-bar.pushed {
+        margin-left: 0; /* Adjust margin-left for mobile view */
+        z-index: 2; /* Set z-index higher than the sidebar for mobile view */
+    }
+
+    .sidebar {
+        z-index: 3; /* Ensure the sidebar is above the top bar in mobile view */
+    }
+
+    .sidebar-toggle {
+        display: none; /* Hide the desktop sidebar toggle in mobile view */
+    }
+
+    .sidebar-toggle-mobile {
+        display: block;
+        position: fixed;
+        top: 10px;
+        z-index: 4; /* Ensure the button is above the sidebar and top bar in mobile view */
+    }
+}
+
+.sidebar button {
+    font-size: 18px;
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    text-align: left;
+    width: 250px;
+    display: flex; /* Align icon and text horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.sidebar button i {
+    margin-right: 10px; /* Adjust the spacing between icon and text */
+}
+
+.sidebar button:hover {
+    background-color: #444;
+    color: #ffffff;
+}

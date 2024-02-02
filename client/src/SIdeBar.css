@@ -1,0 +1,70 @@
+/* client/src/SideBar.css */
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+  }
+  
+  .sidebar {
+    position: fixed;
+    width: 60px; /* Set a fixed width for the closed state */
+    transition: width 0.5s;
+    height: 100%;
+    padding-top: 60px;
+    background-color: #92A8D1;
+    overflow-x: hidden;
+  }
+  
+  .sidebar.open {
+    width: 250px; /* Set a wider width for the open state */
+  }
+  
+  .sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar button {
+    font-size: 18px;
+    background-color: #92A8D1;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    text-align: left;
+    width: 250px;
+  }
+  
+  .sidebar button:hover {
+    background-color: #444;
+    color: #ffffff;
+  }
+  
+  .open-main {
+    margin-left: 250px;
+    transition: margin-left 0.5s;
+  }
+  
+  /* Adjust the position of the toggle button */
+    .sidebar-toggle {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 2;
+        background-color: #92A8D1; /* Set the background color to black */
+        color: #000; /* Set the text color to white */
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+  
